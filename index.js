@@ -96,6 +96,9 @@ const handleSubmit = (event) => {
             let danger = document.getElementById("danger");
             danger.innerHTML = error;
             danger.classList.remove("d-none");
+
+            let success = document.getElementById("success");
+            success.classList.add("d-none");
         });
 
     resume();
