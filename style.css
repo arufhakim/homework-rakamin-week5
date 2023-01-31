@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Sora&display=swap");
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Sora", sans-serif;
+  background-color: #fffde8;
+}
+
+.navbar {
+  background-color: #fffde8 !important;
+}
+
+.text-green {
+  color: #01959f;
+}
+
+.bg-green {
+  background-color: #01959f;
+  color: white;
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rakamin Academy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+
+    <!-- custom CSS -->
+    <link rel="stylesheet" href="./style.css" />
+
+    <!-- js -->
+    <script src="./index.js"></script>
+  </head>
+  <body class="mb-5">
+    <!-- nav -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary px-5 mb-5">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="./index.html"> <img src="./img/logo-rakamin.png" alt="Logo Rakamin" height="50" /> </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item me-2">
+              <button class="btn btn-primary" aria-current="page" onclick="listPendaftar()">List Pendaftar</button>
+            </li>
+            <li class="nav-item">
+              <button class="btn btn-warning" aria-current="page" onclick="registrasi()">Registrasi</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- end nav -->
+
+    <!-- list pendaftar -->
+    <div class="container mb-5" id="list">
+      <h2 class="text-center text-green">List Pendaftar Rakamin Academy</h2>
+      <p class="text-center mb-4">Berikut adalah data Pendaftar Rakamin Academy yang telah melakukan Registrasi dan terdaftar di <i>database</i>.</p>
+      <table class="table table-sm table-bordered table-hover border-dark mb-5">
+        <thead>
+          <tr>
+            <th class="text-center" scope="col">Nama</th>
+            <th class="text-center" scope="col">Umur</th>
+            <th class="text-center" scope="col">Uang Saku</th>
+          </tr>
+        </thead>
+        <tbody id="table-body"></tbody>
+      </table>
+
+      <!-- resume -->
+      <h2 class="text-center text-green">Resume</h2>
+      <p class="text-center mb-4">Berikut adalah Nilai Rata - Rata Umur dan Uang Saku.</p>
+      <div class="row justify-content-center">
+        <div class="col text-center">
+          <h5>Rata - Rata Umur</h5>
+          <h4 id="avg-umur"></h4>
+        </div>
+        <div class="col text-center">
+          <h5>Rata - Rata Uang Saku</h5>
+          <h4 id="avg-uang"></h4>
+        </div>
+      </div>
+      <!-- end resume -->
+    </div>
+    <!-- end list pendaftar -->
+
+    <!-- registrasi -->
+    <div class="container d-none mb-5" id="registrasi">
+      <h2 class="text-center text-green">Registrasi Rakamin Academy</h2>
+      <p class="text-center mb-4">Formulir Registrasi Rakamin Academy.</p>
+
+      <!-- alert -->
+      <div class="alert alert-danger d-none" role="alert" id="danger"></div>
+      <div class="alert alert-success d-none" role="alert" id="success"></div>
+      <!-- end alert -->
+
+      <form onsubmit="handleSubmit(event)">
+        <div class="mb-3">
+          <label for="nama" class="form-label">Nama</label>
+          <input type="text" class="form-control" id="nama" name="nama" required />
+        </div>
+        <div class="mb-3">
+          <label for="umur" class="form-label">Umur</label>
+          <input type="number" class="form-control" id="umur" name="umur" required />
+        </div>
+        <div class="mb-3">
+          <label for="uang" class="form-label">Uang Saku</label>
+          <input type="number" class="form-control" id="uang" name="uang" required />
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+    <!-- registrasi -->
+
+    <!-- footer -->
+    <footer class="bg-green position-fixed bottom-0 w-100 text-center py-2">Made with &#128151; by Aruf Rachman Hakim | Fullstack Web Development Batch 1 - Rakamin Academy</footer>
+    <!-- end footer -->
+
+    <!-- single page app -->
+    <script>
+      function listPendaftar() {
+        let getListPendaftar = document.getElementById("list");
+        getListPendaftar.classList.remove("d-none");
+
+        let getRegistrasi = document.getElementById("registrasi");
+        getRegistrasi.classList.add("d-none");
+      }
+
+      function registrasi() {
+        let getRegistrasi = document.getElementById("registrasi");
+        getRegistrasi.classList.remove("d-none");
+
+        let getListPendaftar = document.getElementById("list");
+        getListPendaftar.classList.add("d-none");
+      }
+    </script>
+    <!-- end single page app -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  </body>
+</html>
