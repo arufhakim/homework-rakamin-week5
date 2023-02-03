@@ -19,3 +19,7 @@ body {
   background-color: #01959f;
   color: white;
 }
+
+input::placeholder {
+  font-size: 12px;
+}
